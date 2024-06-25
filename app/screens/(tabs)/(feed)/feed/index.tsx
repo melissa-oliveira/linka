@@ -1,7 +1,9 @@
 import { Text, View } from "react-native";
 
 export default function Feed() {
-    return (
-        <View>Feed</View>
-    )
+  return (
+    <View>
+      <Text>FASD</Text>
+    </View>
+  );
 }

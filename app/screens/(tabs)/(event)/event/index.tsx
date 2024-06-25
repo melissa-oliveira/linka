@@ -1,7 +1,9 @@
 import { Text, View } from "react-native";
 
 export default function Event() {
-    return (
-        <View>Event</View>
-    )
+  return (
+    <View>
+      <Text>FASD</Text>
+    </View>
+  );
 }
