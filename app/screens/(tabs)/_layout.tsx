@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
@@ -6,7 +7,15 @@ export default function AppLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "orange",
+        tabBarActiveTintColor: Colors.orange,
+        tabBarInactiveTintColor: Colors.gray,
+        tabBarStyle: {
+          height: 70,
+          paddingTop: 7,
+        },
+        tabBarLabelStyle: {
+          marginBottom: 10,
+        },
       }}
     >
       <Tabs.Screen
@@ -19,11 +28,20 @@ export default function AppLayout() {
         }}
       />
       <Tabs.Screen
-        name="(event)/event/index"
+        name="(event)"
         options={{
           title: "Eventos",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="calendar-clear-outline" size={28} color={color} />
+            <Ionicons name="calendar-outline" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(new)/new/index"
+        options={{
+          title: "",
+          tabBarIcon: () => (
+            <Ionicons name="add-circle" size={50} color={Colors.orange} />
           ),
         }}
       />
