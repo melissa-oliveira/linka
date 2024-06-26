@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
 type Props = {
     title: string,
@@ -8,42 +8,43 @@ type Props = {
     backgroundColor: string,
     textColor: string,
     borderColor: string,
-    borderRadius: number,
     width?: number,
     height?: number,
     fontSize?: number,
-    iconName?: undefined,
+    iconName?: any,
 }
 
-export default function Button(props: Props) {
+export default function OptionModalNew(props: Props) {
     return (
         <TouchableOpacity style={[styles.button,
         { backgroundColor: props.backgroundColor },
-        { borderRadius: props.borderRadius },
         { width: props.width },
         { height: props.height },
         { borderColor: props.borderColor }]} onPress={props.onPress}>
-            <Ionicons name={props.iconName} size={18} color={props.textColor} style={styles.icon} />
+            <View style={[styles.iconContainer, { backgroundColor: props.textColor }]}>
+                <Ionicons name={props.iconName} size={18} color={props.backgroundColor} />
+            </View>
             <Text style={[styles.buttonText, { color: props.textColor }, { fontSize: props.fontSize }]}>{props.title}</Text>
-        </TouchableOpacity>
+        </TouchableOpacity >
     );
 };
 
 const styles = StyleSheet.create({
     button: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
-        paddingVertical: 10,
+        padding: 10,
         height: 40,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         elevation: 5,
         alignSelf: 'center',
         borderWidth: 1,
+        borderRadius: 40,
     },
-    icon: {
-        marginEnd: 3
-
+    iconContainer: {
+        marginEnd: 10,
+        padding: 7,
+        borderRadius: 100,
     },
     buttonText: {
         fontSize: 16,

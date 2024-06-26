@@ -36,12 +36,12 @@ export default function NewEvent() {
             <ScrollView>
                 <View style={styles.container}>
                     <View style={styles.titleContainer}>
-                        <TouchableOpacity
-                            onPress={() => router.push({ pathname: "screens/new" })}
-                        >
-                            <Ionicons name="chevron-back-outline" size={24} color={Colors.black} style={styles.iconBack} />
-                        </TouchableOpacity>
                         <Text style={styles.title}>Novo Evento</Text>
+                        <TouchableOpacity
+                            onPress={() => router.push({ pathname: "screens/feed" })}
+                        >
+                            <Ionicons name="close-outline" size={28} color={Colors.red} style={styles.iconBack} />
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.section}>
@@ -212,11 +212,20 @@ export default function NewEvent() {
 
                     <View style={styles.buttonContainer}>
                         <Button
-                            title="Cadastrar"
+                            title="Publicar Evento"
                             onPress={() => { }}
                             backgroundColor={Colors.orange}
                             textColor={Colors.white}
                             borderColor={Colors.orange}
+                            borderRadius={12}
+                            width={335}
+                        />
+                        <Button
+                            title="Cancelar"
+                            onPress={() => router.push({ pathname: "screens/feed" })}
+                            backgroundColor={Colors.white}
+                            textColor={Colors.red}
+                            borderColor={Colors.red}
                             borderRadius={12}
                             width={335}
                         />
@@ -237,7 +246,7 @@ const styles = StyleSheet.create({
     },
     titleContainer: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'flex-end',
         marginBottom: 20,
     },
@@ -307,6 +316,7 @@ const styles = StyleSheet.create({
     addButtonContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 3,
     },
     addButton: {
         color: Colors.orange,
@@ -314,7 +324,8 @@ const styles = StyleSheet.create({
         marginLeft: 5,
     },
     buttonContainer: {
-        marginTop: 20,
+        marginTop: 30,
         alignItems: 'center',
+        gap: 7,
     },
 });
