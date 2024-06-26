@@ -15,6 +15,7 @@ export default function AppLayout() {
         },
         tabBarLabelStyle: {
           marginBottom: 10,
+          backgroundColor: 'transparent'
         },
       }}
     >
@@ -37,12 +38,15 @@ export default function AppLayout() {
         }}
       />
       <Tabs.Screen
-        name="(new)/new/index"
+        name="(new)/new"
         options={{
-          title: "",
+          title: "Novo",
           tabBarIcon: () => (
-            <Ionicons name="add-circle" size={50} color={Colors.orange} />
+            <Ionicons name="add-circle" size={52} color={Colors.orange} style={{ marginBottom: -5 }} />
           ),
+          tabBarLabelStyle: {
+            color: Colors.white
+          }
         }}
       />
       <Tabs.Screen

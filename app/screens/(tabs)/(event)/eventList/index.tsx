@@ -6,58 +6,58 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 
 export default function EventList() {
   return (
-    <View>
+    <View style={styles.pageColor}>
 
       <Header
         userFirstName="Associação"
         userSurename="Betel"
         userProfileImageUrl="../../assets/images/profileImageAssociacaoBetel.png"
       ></Header>
-<ScrollView>
-      <View style={styles.container}>
+      <ScrollView>
+        <View style={styles.container}>
 
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Meus Eventos</Text>
-          <Ionicons name="filter-outline" size={24} color={Colors.black} />
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Meus Eventos</Text>
+            <Ionicons name="filter-outline" size={24} color={Colors.black} />
+          </View>
+
+          <EventCard
+            eventTitle="Sopão Betel no Bairro São Francisco"
+            eventDate="12/06/2024"
+            eventJobs="25"
+            eventFilledJobs="20"
+            eventImageUrl="../../assets/images/sopaoImage.png"
+            onPress={() => { }}
+          ></EventCard>
+
+          <EventCard
+            eventTitle="Bazar Missionário"
+            eventDate="10/06/2024"
+            eventJobs="15"
+            eventFilledJobs="7"
+            eventImageUrl="../../assets/images/bazarImage.png"
+            onPress={() => { }}
+          ></EventCard>
+
+          <EventCard
+            eventTitle="Distribuição de Cestas Básicas"
+            eventDate="25/05/2024"
+            eventJobs="25"
+            eventFilledJobs="20"
+            eventImageUrl="../../assets/images/cestasImage.png"
+            onPress={() => { }}
+          ></EventCard>
+
+          <EventCard
+            eventTitle="Sopão Betel no Bairro Jardim União"
+            eventDate="12/05/2024"
+            eventJobs="25"
+            eventFilledJobs="20"
+            eventImageUrl="../../assets/images/sopaoImage.png"
+            onPress={() => { }}
+          ></EventCard>
+
         </View>
-
-        <EventCard
-          eventTitle="Sopão Betel no Bairro São Francisco"
-          eventDate="02/06/2004"
-          eventJobs="25"
-          eventFilledJobs="20"
-          eventImageUrl="../../assets/images/sopaoImage.png"
-          onPress={() => { }}
-        ></EventCard>
-
-        <EventCard
-          eventTitle="Bazar Missionário"
-          eventDate="10/06/2004"
-          eventJobs="15"
-          eventFilledJobs="7"
-          eventImageUrl="../../assets/images/bazarImage.png"
-          onPress={() => { }}
-        ></EventCard>
-
-        <EventCard
-          eventTitle="Distribuição de Cestas Básicas"
-          eventDate="01/05/2004"
-          eventJobs="25"
-          eventFilledJobs="20"
-          eventImageUrl="../../assets/images/cestasImage.png"
-          onPress={() => { }}
-        ></EventCard>
-
-        <EventCard
-          eventTitle="Sopão Betel no Bairro Jardim União"
-          eventDate="02/06/2004"
-          eventJobs="25"
-          eventFilledJobs="20"
-          eventImageUrl="../../assets/images/sopaoImage.png"
-          onPress={() => { }}
-        ></EventCard>
-
-      </View>
       </ScrollView>
     </View>
 
@@ -65,6 +65,10 @@ export default function EventList() {
 }
 
 const styles = StyleSheet.create({
+  pageColor: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
   container: {
     padding: 30,
   },

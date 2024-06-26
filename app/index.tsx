@@ -16,7 +16,7 @@ export default function indexScreen() {
 
     return (
         <View>
-            {redirect ? <Redirect href="/screens/feed" /> :
+            {redirect ? <Redirect href="/screens/(feed)/feed" /> :
                 <Text>LINKA</Text>}
         </View>
     );

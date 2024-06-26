@@ -8,7 +8,9 @@ type Props = {
     textColor: string,
     borderColor: string,
     borderRadius: number,
-    width: number
+    width: number,
+    height?: number,
+    fontSize?: number,
 }
 
 export default function Button(props: Props) {
@@ -17,8 +19,9 @@ export default function Button(props: Props) {
         { backgroundColor: props.backgroundColor },
         { borderRadius: props.borderRadius },
         { width: props.width },
+        { height: props.height },
         { borderColor: props.borderColor }]} onPress={props.onPress}>
-            <Text style={[styles.buttonText, { color: props.textColor }]}>{props.title}</Text>
+            <Text style={[styles.buttonText, { color: props.textColor }, { fontSize: props.fontSize }]}>{props.title}</Text>
         </TouchableOpacity>
     );
 };
